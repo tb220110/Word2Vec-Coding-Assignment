@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word2Vec Opposite Words</title>
+</head>
+<body>
+    <h1>Find Opposite Word</h1>
+    <form method="POST">
+        <label for="word">Enter a word:</label>
+        <input type="text" id="word" name="word">
+        <button type="submit">Find Opposite Word</button>
+    </form>
+    <div>
+        <h2>Opposite Words:</h2>
+        <ul>
+            {% for word, similarity in opposite_words %}
+                <li>{{ word }} (Similarity: {{ similarity }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
