@@ -13,7 +13,7 @@ def index():
         word = request.form["word"]
         if word:
             try:
-                reference_pair = ("full", "empty")
+                reference_pair = ("old", "young")
                 result_vector = model.wv[word] - model.wv[reference_pair[0]] + model.wv[reference_pair[1]]
                 opposite_words = model.wv.similar_by_vector(result_vector)
             except KeyError:
